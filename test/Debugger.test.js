@@ -7,13 +7,11 @@ describe("Debugger", function () {
     const Debugger = await DebuggerFactory.deploy();
     await Debugger.deployed();
     const FACTORY_ADDRESS = '0x47625f645f394517807e5c2e95d8c2289b9ed3d5';
-    const WETH_ADDRESS = '0xdf032bc4b9dc2782bb09352007d4c57b75160b15';
+    const WETH_ADDRESS = '0xc778417E063141139Fce010982780140Aa0cD5Ab';
     const UTOKEN_FRD_ADDRESS = '0xfd58c57105e7c11b58f094264ae4a44d96317d41';
 
-    const pairForResult = await Debugger.pairFor(FACTORY_ADDRESS, UTOKEN_FRD_ADDRESS, WETH_ADDRESS);
-    const bytesToAddressResult = await Debugger.bytesToAddress(pairForResult);
+    const pairForResult = await Debugger.pairFor(FACTORY_ADDRESS, WETH_ADDRESS, UTOKEN_FRD_ADDRESS);
     console.log({ pairForResult });
-    console.log({ bytesToAddressResult });
     // const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
     // // wait until the transaction is mined
     // await setGreetingTx.wait();
