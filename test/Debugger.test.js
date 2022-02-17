@@ -6,11 +6,11 @@ describe("Debugger", function () {
     const DebuggerFactory = await ethers.getContractFactory("Debugger");
     const Debugger = await DebuggerFactory.deploy();
     await Debugger.deployed();
-    const FACTORY_ADDRESS = '0xbAcC776b231c571a7e6ab7Bc2C8a099e07153377';
-    const UTOKEN_FRD_ADDRESS = '0xfd58c57105e7c11b58f094264ae4a44d96317d41';
+    const FACTORY_ADDRESS = '0x47625f645f394517807e5c2e95d8c2289b9ed3d5';
     const WETH_ADDRESS = '0xdf032bc4b9dc2782bb09352007d4c57b75160b15';
+    const UTOKEN_FRD_ADDRESS = '0xfd58c57105e7c11b58f094264ae4a44d96317d41';
 
-    const pairForResult = await Debugger.pairFor(FACTORY_ADDRESS, WETH_ADDRESS, UTOKEN_FRD_ADDRESS);
+    const pairForResult = await Debugger.pairFor(FACTORY_ADDRESS, UTOKEN_FRD_ADDRESS, WETH_ADDRESS);
     const bytesToAddressResult = await Debugger.bytesToAddress(pairForResult);
     console.log({ pairForResult });
     console.log({ bytesToAddressResult });
